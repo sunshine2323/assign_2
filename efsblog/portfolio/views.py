@@ -235,16 +235,20 @@ def portfolio(request,pk):
        sum_of_initial_stock_value += stock.initial_stock_value()
        initial_stock_value = stock.shares * stock.purchase_price
 
-
-
-
+   portfolio_initial_investment = round(
+       float(sum_of_initial_stock_value) + float(sum_acquired_value['acquired_value__sum']), 3);
+   portfolio_current_investment = round(float(sum_current_stocks_value) + float(sum_recent_value['recent_value__sum']),
+                                        3);
 
    return render(request, 'portfolio/portfolio.html', {'customers': customers, 'investments': investments,
                                                        'stocks': stocks,
                                                        'sum_acquired_value': sum_acquired_value,
                                                        'sum_recent_value': sum_recent_value,
                                                        'sum_current_stocks_value': sum_current_stocks_value,
-                                                       'sum_of_initial_stock_value': sum_of_initial_stock_value})
+                                                       'sum_of_initial_stock_value': sum_of_initial_stock_value,
+                                                       'portfolio_initial_investment': portfolio_initial_investment,
+                                                       'portfolio_current_investment': portfolio_current_investment
+                                                       })
 
 
 
