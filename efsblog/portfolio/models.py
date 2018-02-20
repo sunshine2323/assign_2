@@ -98,6 +98,7 @@ class Stock(models.Model):
 class Mutualfund(models.Model):
     customer = models.ForeignKey(Customer, related_name='mutualfunds')
     category = models.CharField(max_length=50)
+    description = models.CharField(max_length=200)
     acquired_value = models.DecimalField(max_digits=10, decimal_places=2)
     acquired_date = models.DateField(default=timezone.now)
     recent_value = models.DecimalField(max_digits=10, decimal_places=2)

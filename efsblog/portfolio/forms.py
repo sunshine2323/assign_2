@@ -25,5 +25,5 @@ class MutualfundForm(forms.ModelForm):
     class Meta:
         model = Mutualfund
         fields = (
-            'customer', 'category', 'acquired_value', 'acquired_date', 'recent_value',
+            'customer', 'category','description', 'acquired_value', 'acquired_date', 'recent_value',
             'recent_date',)

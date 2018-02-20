@@ -20,7 +20,7 @@ class StockList(admin.ModelAdmin):
     ordering = ['customer']
 
 class MutualfundList(admin.ModelAdmin):
-    list_display = ('customer', 'category',  'recent_value')
+    list_display = ('customer', 'category', 'description', 'recent_value')
     list_filter = ('customer', 'category')
     search_fields = ('customer', 'category')
     ordering = ['customer']
